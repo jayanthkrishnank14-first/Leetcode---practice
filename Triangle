@@ -1,0 +1,24 @@
+import java.util.List;
+
+class Solution {
+    public int minimumTotal(List<List<Integer>> triangle) {
+        int n = triangle.size();
+        // dp array stores the minimum path sums starting from the bottom row
+        int[] dp = new int[n];
+
+        // Initialize dp array with the bottom row values
+        for (int i = 0; i < n; i++) {
+            dp[i] = triangle.get(n - 1).get(i);
+        }
+
+        // Process bottom-up from the second-to-last row up to the top
+        for (int row = n - 2; row >= 0; row--) {
+            for (int col = 0; col <= row; col++) {
+                // Minimum path sum from current position is current value + min of two adjacent values below
+                dp[col] = triangle.get(row).get(col) + Math.min(dp[col], dp[col + 1]);
+            }
+        }
+
+        return dp[0];
+    }
+}
