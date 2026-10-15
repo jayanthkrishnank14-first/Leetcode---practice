@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class MainObjectX {
+    int x;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        MainObjectX myObj = new MainObjectX();
+
+        System.out.print("Enter the value for X: ");
+        myObj.x = scanner.nextInt();
+
+        System.out.println("Value of X: " + myObj.x);
+
+        scanner.close();
+    }
+}
