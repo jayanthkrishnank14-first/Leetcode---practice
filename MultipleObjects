@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class MultipleObjects {
+    int x;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        MultipleObjects myObj1 = new MultipleObjects();
+        MultipleObjects myObj2 = new MultipleObjects();
+
+        System.out.print("Enter value for x in myObj1: ");
+        myObj1.x = scanner.nextInt();
+
+        System.out.print("Enter value for x in myObj2: ");
+        myObj2.x = scanner.nextInt();
+
+        System.out.println("Value of x in myObj1: " + myObj1.x);
+        System.out.println("Value of x in myObj2: " + myObj2.x);
+
+        scanner.close();
+    }
+}
