@@ -40,4 +40,15 @@ class Solution {
 
         return result * sign;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.myAtoi("42"));               // Output: 42
+        System.out.println(sol.myAtoi("   -042"));          // Output: -42
+        System.out.println(sol.myAtoi("1337c0d3"));        // Output: 1337
+        System.out.println(sol.myAtoi("0-1"));             // Output: 0
+        System.out.println(sol.myAtoi("words and 987"));   // Output: 0
+        System.out.println(sol.myAtoi("91283472332"));     // Output: 2147483647 (Integer.MAX_VALUE)
+        System.out.println(sol.myAtoi("-91283472332"));    // Output: -2147483648 (Integer.MIN_VALUE)
+    }
 }
