@@ -2,17 +2,28 @@ import java.util.Scanner;
 
 public class RectangleArea {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter length of the rectangle: ");
+            if (!scanner.hasNextDouble()) {
+                System.out.println("Invalid input. Please enter a valid number for length.");
+                return;
+            }
+            double length = scanner.nextDouble();
 
-        System.out.print("Enter length of the rectangle: ");
-        double length = scanner.nextDouble();
+            System.out.print("Enter width of the rectangle: ");
+            if (!scanner.hasNextDouble()) {
+                System.out.println("Invalid input. Please enter a valid number for width.");
+                return;
+            }
+            double width = scanner.nextDouble();
 
-        System.out.print("Enter width of the rectangle: ");
-        double width = scanner.nextDouble();
+            if (length < 0 || width < 0) {
+                System.out.println("Length and width must be non-negative.");
+                return;
+            }
 
-        double area = length * width;
-        System.out.println("Area of Rectangle = " + area);
-
-        scanner.close();
+            double area = length * width;
+            System.out.println("Area of Rectangle = " + area);
+        }
     }
 }
