@@ -10,4 +10,22 @@ class Solution {
         }
         return sum;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.diagonalSum(new int[][]{
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        })); // Output: 25 (1 + 5 + 9 + 3 + 7)
+
+        System.out.println(sol.diagonalSum(new int[][]{
+            {1, 1, 1, 1},
+            {1, 1, 1, 1},
+            {1, 1, 1, 1},
+            {1, 1, 1, 1}
+        })); // Output: 8
+
+        System.out.println(sol.diagonalSum(new int[][]{{5}})); // Output: 5
+    }
 }
