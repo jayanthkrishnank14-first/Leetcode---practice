@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Solution {
     public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
         int colIndex = 0;
@@ -11,5 +13,16 @@ class Solution {
             }
         }
         return count;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        List<List<String>> items = Arrays.asList(
+            Arrays.asList("phone", "blue", "pixel"),
+            Arrays.asList("computer", "silver", "lenovo"),
+            Arrays.asList("phone", "gold", "iphone")
+        );
+        System.out.println(sol.countMatches(items, "color", "silver")); // Output: 1
+        System.out.println(sol.countMatches(items, "type", "phone"));   // Output: 2
     }
 }
