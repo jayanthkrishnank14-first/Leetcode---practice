@@ -11,4 +11,11 @@ class Solution {
         }
         return steps;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.numberOfSteps(14)); // Output: 6 (14 -> 7 -> 6 -> 3 -> 2 -> 1 -> 0)
+        System.out.println(sol.numberOfSteps(8));  // Output: 4 (8 -> 4 -> 2 -> 1 -> 0)
+        System.out.println(sol.numberOfSteps(0));  // Output: 0
+    }
 }
