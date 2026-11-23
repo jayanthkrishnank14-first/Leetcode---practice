@@ -7,4 +7,12 @@ class Solution {
         }
         return count;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.hammingWeight(11));          // Output: 3 (binary: ...1011)
+        System.out.println(sol.hammingWeight(128));         // Output: 1 (binary: ...10000000)
+        System.out.println(sol.hammingWeight(2147483645));  // Output: 30
+        System.out.println(sol.hammingWeight(-3));          // Output: 31 (two's complement 32-bit int)
+    }
 }
