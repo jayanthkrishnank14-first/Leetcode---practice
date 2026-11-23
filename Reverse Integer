@@ -20,4 +20,13 @@ class Solution {
 
         return rev;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.reverse(123));         // Output: 321
+        System.out.println(sol.reverse(-123));        // Output: -321
+        System.out.println(sol.reverse(120));         // Output: 21
+        System.out.println(sol.reverse(1534236469));  // Output: 0 (overflows 32-bit int)
+        System.out.println(sol.reverse(-2147483648)); // Output: 0 (underflows 32-bit int)
+    }
 }
