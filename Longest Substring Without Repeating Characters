@@ -25,4 +25,11 @@ class Solution {
 
         return maxLength;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.lengthOfLongestSubstring("abcabcbb")); // Output: 3 ("abc")
+        System.out.println(sol.lengthOfLongestSubstring("bbbbb"));    // Output: 1 ("b")
+        System.out.println(sol.lengthOfLongestSubstring("pwwkew"));   // Output: 3 ("wke")
+    }
 }
