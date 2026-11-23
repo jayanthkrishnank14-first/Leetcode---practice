@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     public int findContentChildren(int[] g, int[] s) {
         Arrays.sort(g);
@@ -10,5 +12,11 @@ class Solution {
             j++;
         }
         return i;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.findContentChildren(new int[]{1, 2, 3}, new int[]{1, 1})); // Output: 1
+        System.out.println(sol.findContentChildren(new int[]{1, 2}, new int[]{1, 2, 3})); // Output: 2
     }
 }
