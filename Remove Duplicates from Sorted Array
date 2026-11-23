@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     public int removeDuplicates(int[] nums) {
         if (nums.length == 0) {
@@ -16,5 +18,20 @@ class Solution {
         }
 
         return k;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        int[] a = {1, 1, 2};
+        int ka = sol.removeDuplicates(a);
+        System.out.println("k = " + ka + ", unique prefix = " + Arrays.toString(Arrays.copyOf(a, ka))); // k = 2, [1, 2]
+
+        int[] b = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
+        int kb = sol.removeDuplicates(b);
+        System.out.println("k = " + kb + ", unique prefix = " + Arrays.toString(Arrays.copyOf(b, kb))); // k = 5, [0, 1, 2, 3, 4]
+
+        int[] c = {};
+        System.out.println("k = " + sol.removeDuplicates(c)); // k = 0
     }
 }
