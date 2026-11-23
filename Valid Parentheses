@@ -29,4 +29,13 @@ class Solution {
         // Valid only if all opened brackets have been matched and popped
         return stack.isEmpty();
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.isValid("()"));     // Output: true
+        System.out.println(sol.isValid("()[]{}")); // Output: true
+        System.out.println(sol.isValid("(]"));     // Output: false
+        System.out.println(sol.isValid("([)]"));   // Output: false
+        System.out.println(sol.isValid("{[]}"));   // Output: true
+    }
 }
