@@ -4,20 +4,26 @@ public class MultipleObjects {
     int x;
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        MultipleObjects myObj1 = new MultipleObjects();
-        MultipleObjects myObj2 = new MultipleObjects();
+        try (Scanner scanner = new Scanner(System.in)) {
+            MultipleObjects myObj1 = new MultipleObjects();
+            MultipleObjects myObj2 = new MultipleObjects();
 
-        System.out.print("Enter value for x in myObj1: ");
-        myObj1.x = scanner.nextInt();
+            System.out.print("Enter value for x in myObj1: ");
+            if (!scanner.hasNextInt()) {
+                System.out.println("Invalid input for myObj1.");
+                return;
+            }
+            myObj1.x = scanner.nextInt();
 
-        System.out.print("Enter value for x in myObj2: ");
-        myObj2.x = scanner.nextInt();
+            System.out.print("Enter value for x in myObj2: ");
+            if (!scanner.hasNextInt()) {
+                System.out.println("Invalid input for myObj2.");
+                return;
+            }
+            myObj2.x = scanner.nextInt();
 
-        System.out.println("Value of x in myObj1: " + myObj1.x);
-        System.out.println("Value of x in myObj2: " + myObj2.x);
-
-        scanner.close();
+            System.out.println("Value of x in myObj1: " + myObj1.x);
+            System.out.println("Value of x in myObj2: " + myObj2.x);
+        }
     }
 }
