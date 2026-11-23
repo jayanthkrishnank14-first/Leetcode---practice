@@ -2,14 +2,16 @@ import java.util.Scanner;
 
 public class SquareOfNumber {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a number to find its square: ");
+            if (!scanner.hasNextInt()) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                return;
+            }
+            int num = scanner.nextInt();
 
-        System.out.print("Enter a number to find its square: ");
-        int num = scanner.nextInt();
-
-        int square = num * num;
-        System.out.println("Square = " + square);
-
-        scanner.close();
+            long square = (long) num * num;
+            System.out.println("Square = " + square);
+        }
     }
 }
