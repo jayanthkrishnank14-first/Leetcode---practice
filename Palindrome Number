@@ -16,4 +16,13 @@ class Solution {
         // When the length is odd, we can get rid of the middle digit by reversedHalf / 10
         return x == reversedHalf || x == reversedHalf / 10;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.isPalindrome(121));  // Output: true
+        System.out.println(sol.isPalindrome(-121)); // Output: false
+        System.out.println(sol.isPalindrome(10));   // Output: false
+        System.out.println(sol.isPalindrome(0));    // Output: true
+        System.out.println(sol.isPalindrome(1221)); // Output: true
+    }
 }
