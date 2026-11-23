@@ -45,4 +45,11 @@ class Solution {
 
         return (int) quotient;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.divide(10, 3));                   // Output: 3
+        System.out.println(sol.divide(7, -3));                   // Output: -2
+        System.out.println(sol.divide(Integer.MIN_VALUE, -1));   // Output: 2147483647
+    }
 }
