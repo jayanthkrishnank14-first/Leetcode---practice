@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     public boolean canMakeArithmeticProgression(int[] arr) {
         Arrays.sort(arr);
@@ -8,5 +10,11 @@ class Solution {
             }
         }
         return true;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.canMakeArithmeticProgression(new int[]{3, 5, 1})); // Output: true
+        System.out.println(sol.canMakeArithmeticProgression(new int[]{1, 2, 4})); // Output: false
     }
 }
