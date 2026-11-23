@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     public void reverseString(char[] s) {
         int left = 0, right = s.length - 1;
@@ -8,5 +10,17 @@ class Solution {
             left++;
             right--;
         }
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+
+        char[] a = {'h', 'e', 'l', 'l', 'o'};
+        sol.reverseString(a);
+        System.out.println(Arrays.toString(a)); // Output: [o, l, l, e, h]
+
+        char[] b = {'H', 'a', 'n', 'n', 'a', 'h'};
+        sol.reverseString(b);
+        System.out.println(Arrays.toString(b)); // Output: [h, a, n, n, a, H]
     }
 }
