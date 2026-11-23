@@ -7,4 +7,11 @@ class Solution {
         }
         return letters[0];
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'a')); // Output: c
+        System.out.println(sol.nextGreatestLetter(new char[]{'c', 'f', 'j'}, 'c')); // Output: f
+        System.out.println(sol.nextGreatestLetter(new char[]{'x', 'x', 'y', 'y'}, 'z')); // Output: x
+    }
 }
