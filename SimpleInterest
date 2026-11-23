@@ -2,20 +2,35 @@ import java.util.Scanner;
 
 public class SimpleInterest {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter Principal amount: ");
+            if (!scanner.hasNextDouble()) {
+                System.out.println("Invalid input. Please enter a valid number for principal.");
+                return;
+            }
+            double principal = scanner.nextDouble();
 
-        System.out.print("Enter Principal amount: ");
-        double principal = scanner.nextDouble();
+            System.out.print("Enter Annual Interest Rate (%): ");
+            if (!scanner.hasNextDouble()) {
+                System.out.println("Invalid input. Please enter a valid number for rate.");
+                return;
+            }
+            double rate = scanner.nextDouble();
 
-        System.out.print("Enter Annual Interest Rate (%): ");
-        double rate = scanner.nextDouble();
+            System.out.print("Enter Time (in years): ");
+            if (!scanner.hasNextDouble()) {
+                System.out.println("Invalid input. Please enter a valid number for time.");
+                return;
+            }
+            double time = scanner.nextDouble();
 
-        System.out.print("Enter Time (in years): ");
-        double time = scanner.nextDouble();
+            if (principal < 0 || rate < 0 || time < 0) {
+                System.out.println("Principal, rate, and time must be non-negative.");
+                return;
+            }
 
-        double simpleInterest = (principal * rate * time) / 100;
-        System.out.println("Simple Interest = " + simpleInterest);
-
-        scanner.close();
+            double simpleInterest = (principal * rate * time) / 100.0;
+            System.out.println("Simple Interest = " + simpleInterest);
+        }
     }
 }
