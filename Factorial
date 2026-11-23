@@ -2,18 +2,26 @@ import java.util.Scanner;
 
 public class Factorial {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.print("Enter a number to find its factorial: ");
+            int num = Integer.parseInt(scanner.nextLine().trim());
 
-        System.out.print("Enter a number to find its factorial: ");
-        int num = scanner.nextInt();
-        long factorial = 1;
+            if (num < 0) {
+                System.out.println("Factorial is not defined for negative numbers.");
+                return;
+            }
+            if (num > 20) {
+                System.out.println("Warning: Result may overflow a 64-bit long for n > 20.");
+            }
 
-        for (int i = 1; i <= num; i++) {
-            factorial *= i;
+            long factorial = 1;
+            for (int i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            System.out.println("Factorial of " + num + " = " + factorial);
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input. Please enter a valid integer.");
         }
-
-        System.out.println("Factorial of " + num + " = " + factorial);
-
-        scanner.close();
     }
 }
