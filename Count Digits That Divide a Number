@@ -1,13 +1,24 @@
 class Solution {
-    public int countDigits(int num) {
-        int count = 0, temp = num;
-        while (temp > 0) {
-            int digit = temp % 10;
-            if (digit != 0 && num % digit == 0) {
-                count++;
-            }
-            temp /= 10;
+    public int getDecimalValue(ListNode head) {
+        int ans = 0;
+        while (head != null) {
+            ans = ans * 2 + head.val;
+            head = head.next;
         }
-        return count;
+        return ans;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        // Linked list: 1 -> 0 -> 1 (binary 101 = decimal 5)
+        ListNode head = new ListNode(1, new ListNode(0, new ListNode(1)));
+        System.out.println(sol.getDecimalValue(head)); // Output: 5
+    }
+}
+
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int val) { this.val = val; }
+    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
