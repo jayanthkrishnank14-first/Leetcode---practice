@@ -2,4 +2,11 @@ class Solution {
     public String toLowerCase(String s) {
         return s.toLowerCase();
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.toLowerCase("Hello"));   // Output: "hello"
+        System.out.println(sol.toLowerCase("here"));    // Output: "here"
+        System.out.println(sol.toLowerCase("LOVELY"));  // Output: "lovely"
+    }
 }
