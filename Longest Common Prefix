@@ -10,4 +10,11 @@ class Solution {
         }
         return prefix;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.longestCommonPrefix(new String[]{"flower", "flow", "flight"})); // Output: fl
+        System.out.println(sol.longestCommonPrefix(new String[]{"dog", "racecar", "car"}));    // Output: ""
+        System.out.println(sol.longestCommonPrefix(new String[]{"interspecies", "interstellar", "interstate"})); // Output: inters
+    }
 }
