@@ -10,4 +10,11 @@ class Solution {
         }
         return count;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.lengthOfLastWord("Hello World"));                 // Output: 5
+        System.out.println(sol.lengthOfLastWord("   fly me   to   the moon  ")); // Output: 4
+        System.out.println(sol.lengthOfLastWord("luffy is still joyboy"));       // Output: 6
+    }
 }
