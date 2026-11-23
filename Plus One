@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     public int[] plusOne(int[] digits) {
         for (int i = digits.length - 1; i >= 0; i--) {
@@ -10,5 +12,13 @@ class Solution {
         int[] result = new int[digits.length + 1];
         result[0] = 1;
         return result;
+    }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(Arrays.toString(sol.plusOne(new int[]{1, 2, 3}))); // Output: [1, 2, 4]
+        System.out.println(Arrays.toString(sol.plusOne(new int[]{4, 3, 2, 1}))); // Output: [4, 3, 2, 2]
+        System.out.println(Arrays.toString(sol.plusOne(new int[]{9}))); // Output: [1, 0]
+        System.out.println(Arrays.toString(sol.plusOne(new int[]{9, 9, 9}))); // Output: [1, 0, 0, 0]
     }
 }
