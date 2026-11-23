@@ -24,4 +24,11 @@ class Solution {
 
         return true;
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.isPalindrome("A man, a plan, a canal: Panama")); // Output: true
+        System.out.println(sol.isPalindrome("race a car"));                     // Output: false
+        System.out.println(sol.isPalindrome(" "));                              // Output: true
+    }
 }
