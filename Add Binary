@@ -23,4 +23,10 @@ class Solution {
 
         return result.reverse().toString();
     }
+
+    public static void main(String[] args) {
+        Solution sol = new Solution();
+        System.out.println(sol.addBinary("11", "1"));      // Output: 100
+        System.out.println(sol.addBinary("1010", "1011")); // Output: 10101
+    }
 }
